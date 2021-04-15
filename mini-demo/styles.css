@@ -1,0 +1,11 @@
+#yes-routine:checked ~ .routine:nth-last-of-type(n+2) {
+	display: block;
+}
+
+#no-routine:checked ~ .routine:last-of-type {
+	display: block;
+}
+
+.routine {
+	display: none;
+}

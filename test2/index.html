@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Mini demo for datepicker</title>
+		<link rel="stylesheet" href="css/styles.css">
+	</head>
+	<body>
+		<div class="naar-werk-container">
+			<h1>Naar werk?</h1>
+			<a id="naar-werk" href="/">Ja</a>
+			<button id="niet-naar-werk">Nee</button>
+		</div>
+		<div class="van-werk-container">
+			<h1>Van werk?</h1>
+			<a id="van-werk" href="/">Ja</a>
+			<button id="niet-van-werk">Nee</button>
+		</div>
+		<div class="waar-naar-toe-container">
+			<h1>Waar wil je naar toe?</h1>
+			<form id="form" action="#" method="POST">
+
+				<label for="from-choice">Van</label>
+				<input list="from" id="from-choice" name="fromChoice">
+				<datalist id="from">
+					<option value="Eindhoven Centraal">
+					<option value="Amsterdam Centraal">
+					<option value="Ziggo Dome, Amsterdam">
+					<option value="Ahoy Rotterdam, Ahoyweg, Rotterdam">
+				</datalist>
+
+				<label for="to-choice">Naar</label>
+				<input list="to" id="to-choice" name="toChoice">
+				<datalist id="to">
+					<option value="Eindhoven Centraal">
+					<option value="Amsterdam Centraal">
+					<option value="Ziggo Dome, Amsterdam">
+					<option value="Ahoy Rotterdam, Ahoyweg, Rotterdam">
+				</datalist>
+
+				<label for="time">Hoe laat?</label>
+				<input id="time" type="time">
+				
+				<label for="date">Wanneer?</label>
+				<input id="date" type="date">
+				
+				<button type="submit">Zoeken</button>
+			</form>
+		</div>
+	</body>
+	<script src="js/main.js"></script>
+</html>
