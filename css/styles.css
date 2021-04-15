@@ -46,6 +46,11 @@
 body {
 	font-family: 'Poppins';
 	margin: 0;
+	background-color: #293133;
+	color: #ffffff;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 }
 
 h1 {
