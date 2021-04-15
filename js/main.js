@@ -33,12 +33,8 @@ form.addEventListener('submit', (e) => {
 	const timeValue = formTime.value
 	const dateValue = formDate.value
 	const when = new Date(`${dateValue} ${timeValue}`)
-	// when.setDate(dateValue)
-	// when.setTime(timeValue)
 
 	console.log(when)
-
-	
 
 	const searchParams = new URLSearchParams({
 		vertrek: fromValue,
