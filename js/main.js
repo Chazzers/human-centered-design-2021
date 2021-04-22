@@ -57,33 +57,42 @@ if(nietVanWerk) {
 }
 
 
-const allTravelOptions = document.querySelectorAll('.ov-optie')
-if(allTravelOptions) {
+const allTravelOptions = document.querySelectorAll('.ov-optie')	
+if(allTravelOptions.length) {
+	let index = 0
 	allTravelOptions[0].focus()
+	document.addEventListener('keyup', event => {
+		event.preventDefault()
+		// if(event.key === 'ArrowUp' || event.key ==='ArrowDown' || event.key === 'ArrowLeft' || event.key === 'ArrowRight' || event.key === 'Space') {
+			
+		// }
+		if(event.key === 'ArrowUp') {
+			index -= 1
+		}
+		if(event.key === 'ArrowDown') {
+			index += 1
+		}
+		if(index < 0) {
+			index = allTravelOptions.length - 1
+		}
+		if(index > allTravelOptions.length - 1){
+			index = 0;
+		}
+		if(event.key === 'ArrowUp' || event.key === 'ArrowDown' || event.key === 'ArrowLeft') {
+			allTravelOptions[index].focus()
+		}
+		if(event.key === 'ArrowRight') {
+			reisAssistentieAanvraagButton.focus()
+		}
+		if(event.code === 'Space') {
+			console.log('hello')
+			document.activeElement.click()
+		}
+	})
 }
-let index = 0
 
-document.addEventListener('keydown', event => {
-	event.preventDefault()
-	if(event.key === 'ArrowUp') {
-		index -= 1
-	}
-	if(event.key === 'ArrowDown') {
-		index += 1
-	}
-	if(index < 0) {
-		index = allTravelOptions.length - 1
-	}
-	if(index > allTravelOptions.length - 1){
-		index = 0;
-	}
-	if(event.key === 'ArrowUp' || 'ArrowDown' || 'ArrowLeft') {
-		allTravelOptions[index].focus()
-	}
-	if(event.key === 'ArrowRight') {
-		reisAssistentieAanvraagButton.focus()
-	}
-})
+
+
 
 // naarWerkLink.href = `https://www.ns.nl/reisplanner/#/?vertrek=Eindhoven%20Centraal&vertrektype=treinstation&aankomst=Amsterdam%20Centraal&aankomsttype=treinstation&type=vertrek&tijd=${tomorrowHref}&toegankelijk=true`
 // vanWerkLink.href= `https://www.ns.nl/reisplanner/#/?vertrek=Eindhoven%20Centraal&vertrektype=treinstation&aankomst=Amsterdam%20Centraal&aankomsttype=treinstation&type=vertrek&tijd=${todayHref}&toegankelijk=true`
