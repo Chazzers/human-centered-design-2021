@@ -43,71 +43,87 @@
     font-display: swap;
 }
 
+:root {
+	/* #003082 */
+	--main-color: #293133;
+	
+	--secondary-color: #ffc917;
+	--tertiary-color: #ffa600;
+	
+	--main-bg-color: #181c1d;
+	--secondary-bg-color: #293133;
+
+	--font-family: 'Poppins'
+}
+
 * {
 	box-sizing: border-box;
 	line-height: 1.5;
 }
 
 body {
-	font-family: 'Poppins';
+	font-family: var(--font-family);
 	margin: 0;
-	background-color: #293133;
-	color: #ffffff;
+	background-color: var(--main-bg-color);
+	color: var(--secondary-color);
 	display: flex;
 	justify-content: center;
 }
 
 h1 {
 	font-size: 2.5em;
-	font-family: 'Poppins';
+	font-family: var(--font-family);
 	font-weight: 900;
 }
 
 h2 {
 	font-size: 2em;
-	font-family: 'Poppins';
+	font-family: var(--font-family);
 	font-weight: bold;
 }
 
 h3 {
 	font-size: 1.75em;
-	font-family: 'Poppins';
+	font-family: var(--font-family);
 	font-weight: 500;
 }
 
 h4 {
 	font-size: 1.5em;
-	font-family: 'Poppins';
+	font-family: var(--font-family);
 	font-weight: 500;
 }
 
 h5 {
 	font-size: 1.25em;
-	font-family: 'Poppins';
+	font-family: var(--font-family);
 	font-weight: 500;
 }
 
 p {
-	font-family: 'Poppins';
+	font-family: var(--font-family);
 	font-weight: normal;
 }
 
 p, a, input, button {
 	font-size: 16px;
+	color: var(--secondary-color);
+	font-family: var(--font-family);
 }
 
 input {
 	display: block;
+	background-color: var(--main-bg-color);
 }
 
 a {
 	text-decoration: none;
-	color: #293133;
+	color: var(--tertiary-color);
 	display: inline-block;
 	padding: 1rem;
 	border-radius: 8px;
 	border: none;
-	background: #ffffff;
+	background: var(--secondary-bg-color);
 }
 
 button {
@@ -116,12 +132,8 @@ button {
 	display: inline-block;
 	padding: 1rem;
 	border-radius: 8px;
-	background: #ffffff;
+	background: var(--secondary-bg-color);
 	border: none;
-}
-
-.naar-werk-container {
-	
 }
 
 .waar-naar-toe-container {
@@ -131,4 +143,374 @@ button {
 .van-werk-container {
 	display: none;
 
+}
+
+body > div {
+	width: 100%;
+}
+
+.reisplanner {
+	width: 100%;
+	background-color: var(--main-color);
+}
+
+.reisplanner form {
+	max-width: 75rem;
+	margin: 0 auto;
+}
+
+
+
+fieldset legend {
+	visibility: hidden;
+	opacity: 0;
+}
+
+fieldset {
+	border: none;
+	padding: 0;
+}
+
+.reis-opties {
+	display: flex;
+}
+
+.locaties {
+	display: flex;
+	
+}
+
+.locaties label {
+	color: var(--secondary-color);
+    background-color: var(--main-bg-color);
+    border-radius: 4px;
+    display: flex;
+    overflow: hidden;
+	align-items: center;
+	padding: 0.5rem 0.875rem;
+	flex: 1 1 100%;
+	
+}
+
+.locaties label:first-of-type {
+	margin-right: 1em
+}
+
+.switcher {
+	margin-right: 1em;
+	/* Directly copied from: https://www.ns.nl/reisplanner */
+}
+
+.switcher button {
+	background-color: transparent;
+	background-image: url("data:image/svg+xml;charset%3DUS-ASCII,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22utf-8%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20version%3D%221.1%22%20id%3D%22Layer_1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20x%3D%220px%22%20y%3D%220px%22%20%20width%3D%2235px%22%20height%3D%2235px%22%20viewBox%3D%220%200%2035%2035%22%20enable-background%3D%22new%200%200%2035%2035%22%20xml%3Aspace%3D%22preserve%22%3E%3Cpolygon%20points%3D%2225.793%2C21.5%2021.293%2C26%2022.708%2C26%2027.208%2C21.5%2022.708%2C17%2021.293%2C17%20%22%2F%3E%3Cpath%20d%3D%22M19%2C21h7c0.276%2C0%2C0.5%2C0.224%2C0.5%2C0.5v0c0%2C0.276-0.224%2C0.5-0.5%2C0.5h-7c-0.276%2C0-0.5-0.224-0.5-0.5v0%20C18.5%2C21.224%2C18.724%2C21%2C19%2C21z%22%2F%3E%3Cpolygon%20points%3D%229.207%2C13.5%2013.707%2C9%2012.293%2C9%207.793%2C13.5%2012.293%2C18%2013.707%2C18%20%22%2F%3E%3Cpath%20d%3D%22M16%2C14H9c-0.276%2C0-0.5-0.224-0.5-0.5v0C8.5%2C13.224%2C8.724%2C13%2C9%2C13h7c0.276%2C0%2C0.5%2C0.224%2C0.5%2C0.5v0%20C16.5%2C13.776%2C16.276%2C14%2C16%2C14z%22%2F%3E%3Cstyle%20type%3D%22text%2Fcss%22%3Ecircle%2C%20ellipse%2C%20line%2C%20path%2C%20polygon%2C%20polyline%2C%20rect%2C%20text%20%7B%20fill%3A%20%23ffc917%3B%20%7D%3C%2Fstyle%3E%3C%2Fsvg%3E");
+}
+
+.locaties label input {
+	border: none;
+	margin: 0 0.5em;
+	width: 100%;
+	font-weight: 600;
+}
+
+ol {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	background-color: var(--main-color);
+	flex: 1 1 40%;
+	margin: 2rem 1rem 2rem 0;
+}
+
+ol li {
+	background-color: white;
+	border-bottom: solid 1px var(--main-bg-color);
+}
+
+ol li button {
+	display: block;
+	padding: 0;
+	width: 100%;
+	text-align: left;
+	padding: 1rem;
+	border-radius: 0;
+}
+
+ol li button article header {
+	display: flex;
+	justify-content: space-between;
+	align-items: baseline;
+}
+
+ol li button article header p span {
+	margin-left: 0.5em;
+}
+
+ol li button article header h3 {
+	margin: 0;
+	position: relative;
+}
+
+.arrow {
+	position: relative;
+	bottom: 0.25rem;
+}
+
+ol li button article header p {
+	margin: 0;
+}
+
+main {
+	max-width: 75rem;
+	margin: 0 auto;
+}
+
+main {
+	display: flex;
+	align-items: flex-start;
+}
+
+main > article {
+	flex: 1 1 60%;
+	margin: 2rem 0 2rem 1rem;
+	background-color: var(--secondary-bg-color);
+	padding: 1rem;
+}
+
+.submit {
+	background-color: var(--tertiary-color);
+	color: var(--secondary-bg-color);
+	align-self: flex-end;
+	border-bottom: solid 3px var(--secondary-color);
+	font-weight: 500;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+}
+
+.vertrek-aankomst-radio:first-of-type {
+	padding: 1rem 0.5rem 1rem 0;
+	position: relative;
+	margin-right: 0;
+}
+
+
+
+.vertrek-aankomst-radio {
+	padding: 1rem 0 1rem 0.5rem;
+	position: relative;
+	margin-right: 1rem;
+}
+
+.vertrek-aankomst-radio input{
+	display: none;
+}
+
+.reis-opties label::after {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 2px;
+	left: 0;
+	background-color: rgba(0,0,0,0.3);
+}
+
+.reis-opties button .refresh {
+	background: no-repeat center center / contain;
+	background-image: url("data:image/svg+xml;charset%3DUS-ASCII,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22utf-8%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20version%3D%221.1%22%20id%3D%22Layer_1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20x%3D%220px%22%20y%3D%220px%22%20%20width%3D%2235px%22%20height%3D%2235px%22%20viewBox%3D%220%200%2035%2035%22%20enable-background%3D%22new%200%200%2035%2035%22%20xml%3Aspace%3D%22preserve%22%3E%3Ctitle%3Eicoon_refresh%3C%2Ftitle%3E%3Cg%3E%20%3Cpath%20d%3D%22M21.158%2C24.037c0.104%2C0.104%2C0.247%2C0.161%2C0.396%2C0.16h0.01l4.285-0.062c0.064%2C0%2C0.129-0.013%2C0.189-0.035%20%20c0.225-0.08%2C0.374-0.292%2C0.378-0.528c-0.002-0.146-0.062-0.287-0.166-0.392c-0.104-0.103-0.247-0.158-0.396-0.157H25.85%20%20l-2.799%2C0.041l0.086-0.087c1.483-1.486%2C2.315-3.502%2C2.312-5.602c0.001-2.084-0.842-4.08-2.332-5.535%20%20c-1.499-1.476-3.521-2.299-5.624-2.288h-0.119c-0.065%2C0.001-0.13%2C0.015-0.191%2C0.035c-0.224%2C0.081-0.375%2C0.292-0.377%2C0.53%20%20c0.001%2C0.146%2C0.06%2C0.284%2C0.163%2C0.386c0.106%2C0.105%2C0.251%2C0.164%2C0.4%2C0.162h0.104c1.812-0.009%2C3.552%2C0.7%2C4.843%2C1.971%20%20c1.279%2C1.251%2C2%2C2.967%2C2%2C4.758c0.006%2C1.866-0.758%2C3.655-2.109%2C4.943l-0.085%2C0.081l-0.006-3.234c0.001-0.146-0.058-0.285-0.162-0.389%20%20c-0.104-0.103-0.246-0.16-0.394-0.159h-0.012c-0.311%2C0.003-0.562%2C0.253-0.564%2C0.563l0.009%2C4.454%20%20C20.994%2C23.798%2C21.055%2C23.937%2C21.158%2C24.037z%22%2F%3E%20%3Cpath%20d%3D%22M9.537%2C17.624c-0.001%2C2.083%2C0.839%2C4.079%2C2.33%2C5.534c1.499%2C1.477%2C3.522%2C2.3%2C5.627%2C2.29h0.124%20%20c0.064-0.001%2C0.128-0.015%2C0.188-0.036c0.225-0.08%2C0.375-0.291%2C0.379-0.528c0-0.146-0.062-0.287-0.166-0.39%20%20c-0.106-0.104-0.251-0.16-0.399-0.158h-0.107c-1.81%2C0.009-3.55-0.699-4.839-1.97c-1.281-1.252-2.002-2.968-2-4.759%20%20c-0.006-1.868%2C0.757-3.655%2C2.109-4.943l0.085-0.081l0.006%2C3.235c-0.001%2C0.146%2C0.057%2C0.285%2C0.161%2C0.387%20%20c0.106%2C0.105%2C0.25%2C0.163%2C0.399%2C0.161h0.009c0.064-0.001%2C0.129-0.012%2C0.19-0.033c0.225-0.08%2C0.375-0.292%2C0.376-0.531l-0.006-4.456%20%20c0-0.145-0.06-0.283-0.163-0.386c-0.106-0.104-0.25-0.163-0.399-0.162h-0.008l-4.286%2C0.063c-0.064%2C0.001-0.129%2C0.013-0.189%2C0.035%20%20c-0.224%2C0.081-0.373%2C0.293-0.375%2C0.531c0%2C0.146%2C0.059%2C0.285%2C0.162%2C0.388c0.106%2C0.104%2C0.25%2C0.163%2C0.399%2C0.161h0.009l2.794-0.045%20%20l-0.086%2C0.088C10.372%2C13.505%2C9.536%2C15.521%2C9.537%2C17.624z%22%2F%3E%3C%2Fg%3E%3Cstyle%20type%3D%22text%2Fcss%22%3Ecircle%2C%20ellipse%2C%20line%2C%20path%2C%20polygon%2C%20polyline%2C%20rect%2C%20text%20%7B%20fill%3A%20%23ffc917%3B%20%7D%3C%2Fstyle%3E%3C%2Fsvg%3E");
+	width: 2rem;
+	height: 2rem;
+	display: inline-block;
+}
+
+.reis-opties button {
+	text-decoration: none;
+    color: var(--secondary-color);
+    display: inline-block;
+    border-radius: 8px;
+    background: var(--secondary-bg-color);
+    border: none;
+    padding: 0;
+    background-color: transparent;
+	position: relative;
+	margin-right: 1rem;
+}
+
+.datum {
+	margin-right: 1rem;
+}
+
+.tijd {
+	margin-right: 1rem;
+}
+
+.reis-opties button::after {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 2px;
+	left: 0;
+	background-color: rgba(0,0,0,0.3);
+}
+
+.reisplanner * {
+	pointer-events: none;			
+}
+
+.reis-opties button span{
+	vertical-align: middle;
+}
+
+.reis-opties label {
+	position: relative;
+}
+
+input[type="radio"] {
+	display: none;
+}
+
+input[type="radio"]:checked + label::after {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 2px;
+	left: 0;
+	background-color: var(--secondary-color);
+}
+
+button {
+	color: var(--secondary-color);
+}
+.vertrek-aankomst-container {
+	display: flex;
+	align-items: flex-end;
+}
+
+.vertrek-aankomst-container p {
+	font-weight: 300;
+	color: var(--secondary-color);
+	opacity: 0.8;
+}
+
+article header > div {
+	display: flex;
+	width: 100%;
+	margin-top: 1rem;
+	justify-content: space-between;
+}
+
+article header > div .arrow{
+	display: block;
+	bottom: 0.5rem;
+	margin: 0 0.5rem;
+}
+
+#option-content header h3 {
+	margin: 0;
+}
+
+#option-content header p {
+	margin: 0;
+}
+
+#option-content .flex-right {
+	display: flex;
+}
+
+#option-content .flex-right .tijd-overstap-container {
+	margin-right: 2rem;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+#option-content .flex-right .perron-container {
+	margin-right: 1rem;
+	height: 100%;
+	width: auto;
+}
+
+#option-content .flex-right .perron-container svg {
+	height: 100%;
+	width: auto;
+}
+
+#option-content .submit {
+	width: 100%;
+	margin-bottom: 1em;
+}
+
+.work-or-home {
+	color: var(--secondary-color);
+}
+
+.reis-assistentie p {
+	border: 1px solid var(--secondary-color);
+	border-radius: 4px;
+	margin: 0;
+	display: inline;
+	padding: 0.2rem;
+}
+
+.not-ns {
+	display: flex;
+	justify-content: center;
+}
+
+.geboekte-reizen {
+	padding: 3rem;
+}
+
+.geboekte-reizen form {
+	display: flex;
+	flex-direction: row;
+	background-color: var(--main-color);
+	padding: 1rem;
+	justify-content: space-between;
+}
+
+.geboekte-reizen form  div{
+	display: flex;
+	flex-direction: row;
+}
+
+.geboekte-reizen form label {
+	display: flex;
+	align-items: center;
+	padding: 1rem;
+	
+}
+
+.geboekte-reizen form label input {
+	margin-left: 0.5rem;
+}
+
+.geboekte-reizen form label select {
+	margin-left: 0.5rem;
+	padding: 0.2rem;
+	background-color: var(--main-bg-color);
+	border: none;
+	color: var(--secondary-color);
+}
+
+.select-label {
+	background-color: var(--main-bg-color);
+}
+
+.geboekte-reizen > div {
+	padding: 2rem;
+	background-color: var(--secondary-bg-color);
+	margin-top: 2rem;
+}
+
+option,
+select {
+	font-size: 16px;
 }

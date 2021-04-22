@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Final datepicker demo</title>
+		<link rel="stylesheet" href="../css/styles.css">
+	</head>
+	<body>
+		<div>
+			<section class="reisplanner">
+				<form action="#">
+					<fieldset>
+						<legend>Locaties</legend>
+						<div class="locaties">
+							<label>
+								Van:
+								<input type="text" value="Eindhoven Centraal">
+							</label>
+							<div class="switcher">
+								<button type="button" class="switcher-btn">
+								</button>
+							</div>
+							<label>
+								Naar:
+								<input type="text" value="Amsterdam Centraal">
+							</label>
+						</div>
+					</fieldset>
+					<fieldset>
+						<legend>Reis opties</legend>
+						<div class="reis-opties">
+							<input id="vertrek" type="radio" value="vertrek" name="vertrekOfAankomst" checked>
+							<label for="vertrek" class="vertrek-aankomst-radio">
+								Vertrek
+							</label>
+							<input id="aankomst" type="radio" value="aankomst" name="vertrekOfAankomst">
+							<label for="aankomst" class="vertrek-aankomst-radio">
+								Aankomst
+							</label>
+							<label class="datum">
+								Vandaag
+								<input type="date" name="date" value="Vandaag">
+							</label>
+							<label class="tijd">
+								11:56
+								<input type="time" value="11:56" name="time">
+							</label>
+							<button type="button" value="Nu" name="now">
+								<span class="refresh"></span>
+								<span class="text">Nu</span>
+							</button>
+							<label>
+								Opties
+								<input type="checkbox" name="options" value="options">
+							</label>
+							<ul>
+								<li><span>X</span><button type="button">Toegankelijk reizen</button></li>
+							</ul>
+						</div>
+					</fieldset>
+					<button class="submit" type="submit">Plannen</button>
+				</form>
+				
+			</section>
+			<main>
+				<ol>
+					<li>
+						<button>
+							<article>
+								<header>
+									<h3>
+										<span class="vertrek">10:36</span>
+										<span class="arrow">
+											<!-- Directly copied from: https://www.ns.nl/reisplanner -->
+											<svg height="11" viewBox="0 0 11.707 11" width="11.707" xmlns="http://www.w3.org/2000/svg"><polygon fill="#ffc917" points="10.293 5.5 4.793 11 6.207 11 11.707 5.5 6.207 0 4.793 0 10.293 5.5"></polygon><path fill="#ffc917" d="M.5,5h9.728a.5.5,0,0,1,.5.5h0a.5.5,0,0,1-.5.5H.5A.5.5,0,0,1,0,5.5H0A.5.5,0,0,1,.5,5Z"></path></svg>
+										</span>
+										<span class="aankomst">11:56</span>
+									</h3>
+									<p>
+										<span>
+											<!-- Directly copied from: https://www.ns.nl/reisplanner -->
+											<svg height="14" viewBox="0 0 14 14" width="14" xmlns="http://www.w3.org/2000/svg" fill="#ffc917"><path d="M7,14a7,7,0,1,1,7-7A7.008,7.008,0,0,1,7,14ZM7,.9A6.058,6.058,0,0,0,1,7a6.058,6.058,0,0,0,6,6.1A6.058,6.058,0,0,0,13,7,6.058,6.058,0,0,0,7,.9Z"></path><path d="M7,2H7a.5.5,0,0,0-.5.5v5h1v-5A.5.5,0,0,0,7,2Z"></path><path d="M9.664,9.993,9.7,9.957a.475.475,0,0,0,0-.671L7.207,6.793,6.5,7.5,8.993,9.993A.475.475,0,0,0,9.664,9.993Z"></path></svg>
+										</span>
+										1:48
+										<span>
+											<!-- Directly copied from: https://www.ns.nl/reisplanner -->
+											<svg fill="#ffc917" height="12" viewBox="0 0 13 12" width="13" xmlns="http://www.w3.org/2000/svg"><path d="M8.586,3.879a2.5,2.5,0,1,0-.707.707L13,9.707V8.293ZM7.561,3.561a1.5,1.5,0,1,1,0-2.121A1.491,1.491,0,0,1,7.561,3.561ZM6.5,7a2.5,2.5,0,0,0-1.379.414L0,2.293V3.707L4.414,8.121A2.5,2.5,0,1,0,6.5,7Zm1.061,3.561A1.5,1.5,0,0,1,5.439,8.44h0a1.5,1.5,0,1,1,2.122,2.121Z"></path></svg>
+										</span>
+										1x
+										<span>
+											<svg fill="#ffc917" _ngcontent-qwy-c46="" height="14px" viewBox="0 0 14 14" width="14px" xmlns="http://www.w3.org/2000/svg" class="ng-star-inserted"><path _ngcontent-qwy-c46="" d="M14,14H0V3H3V0H14ZM1,13H13V1H4V4H1Z"></path></svg>
+										</span>
+										6
+									</p>
+								</header>
+								<section>
+									<p><i>IC</i> Intercity</p>
+									<div class="reis-assistentie">
+										<p>
+											NS Reisassistentie
+										</p>
+									</div>
+								</section>
+							</article>
+						</button>
+					</li>
+					<li>
+						<button>
+							<article>
+								<header>
+									<h3>
+										<span class="vertrek">10:36</span>
+										<span class="arrow">
+											<!-- Directly copied from: https://www.ns.nl/reisplanner -->
+											<svg height="11" viewBox="0 0 11.707 11" width="11.707" xmlns="http://www.w3.org/2000/svg"><polygon fill="#ffc917" points="10.293 5.5 4.793 11 6.207 11 11.707 5.5 6.207 0 4.793 0 10.293 5.5"></polygon><path fill="#ffc917" d="M.5,5h9.728a.5.5,0,0,1,.5.5h0a.5.5,0,0,1-.5.5H.5A.5.5,0,0,1,0,5.5H0A.5.5,0,0,1,.5,5Z"></path></svg>
+										</span>
+										<span class="aankomst">11:56</span>
+									</h3>
+									<p>
+										<span>
+											<!-- Directly copied from: https://www.ns.nl/reisplanner -->
+											<svg height="14" viewBox="0 0 14 14" width="14" xmlns="http://www.w3.org/2000/svg" fill="#ffc917"><path d="M7,14a7,7,0,1,1,7-7A7.008,7.008,0,0,1,7,14ZM7,.9A6.058,6.058,0,0,0,1,7a6.058,6.058,0,0,0,6,6.1A6.058,6.058,0,0,0,13,7,6.058,6.058,0,0,0,7,.9Z"></path><path d="M7,2H7a.5.5,0,0,0-.5.5v5h1v-5A.5.5,0,0,0,7,2Z"></path><path d="M9.664,9.993,9.7,9.957a.475.475,0,0,0,0-.671L7.207,6.793,6.5,7.5,8.993,9.993A.475.475,0,0,0,9.664,9.993Z"></path></svg>
+										</span>
+										1:48
+										<span>
+											<!-- Directly copied from: https://www.ns.nl/reisplanner -->
+											<svg fill="#ffc917" height="12" viewBox="0 0 13 12" width="13" xmlns="http://www.w3.org/2000/svg"><path d="M8.586,3.879a2.5,2.5,0,1,0-.707.707L13,9.707V8.293ZM7.561,3.561a1.5,1.5,0,1,1,0-2.121A1.491,1.491,0,0,1,7.561,3.561ZM6.5,7a2.5,2.5,0,0,0-1.379.414L0,2.293V3.707L4.414,8.121A2.5,2.5,0,1,0,6.5,7Zm1.061,3.561A1.5,1.5,0,0,1,5.439,8.44h0a1.5,1.5,0,1,1,2.122,2.121Z"></path></svg>
+										</span>
+										1x
+										<span>
+											<svg fill="#ffc917" _ngcontent-qwy-c46="" height="14px" viewBox="0 0 14 14" width="14px" xmlns="http://www.w3.org/2000/svg" class="ng-star-inserted"><path _ngcontent-qwy-c46="" d="M14,14H0V3H3V0H14ZM1,13H13V1H4V4H1Z"></path></svg>
+										</span>
+										6
+									</p>
+								</header>
+								<section>
+									<p><i>IC</i> Intercity</p>
+									<div class="reis-assistentie">
+										<p>
+											NS Reisassistentie
+										</p>
+									</div>
+								</section>
+							</article>
+						</button>
+					</li>
+					<li>
+						<button>
+							<article>
+								<header>
+									<h3>
+										<span class="vertrek">10:36</span>
+										<span class="arrow">
+											<!-- Directly copied from: https://www.ns.nl/reisplanner -->
+											<svg height="11" viewBox="0 0 11.707 11" width="11.707" xmlns="http://www.w3.org/2000/svg"><polygon fill="#ffc917" points="10.293 5.5 4.793 11 6.207 11 11.707 5.5 6.207 0 4.793 0 10.293 5.5"></polygon><path fill="#ffc917" d="M.5,5h9.728a.5.5,0,0,1,.5.5h0a.5.5,0,0,1-.5.5H.5A.5.5,0,0,1,0,5.5H0A.5.5,0,0,1,.5,5Z"></path></svg>
+										</span>
+										<span class="aankomst">11:56</span>
+									</h3>
+									<p>
+										<span>
+											<!-- Directly copied from: https://www.ns.nl/reisplanner -->
+											<svg height="14" viewBox="0 0 14 14" width="14" xmlns="http://www.w3.org/2000/svg" fill="#ffc917"><path d="M7,14a7,7,0,1,1,7-7A7.008,7.008,0,0,1,7,14ZM7,.9A6.058,6.058,0,0,0,1,7a6.058,6.058,0,0,0,6,6.1A6.058,6.058,0,0,0,13,7,6.058,6.058,0,0,0,7,.9Z"></path><path d="M7,2H7a.5.5,0,0,0-.5.5v5h1v-5A.5.5,0,0,0,7,2Z"></path><path d="M9.664,9.993,9.7,9.957a.475.475,0,0,0,0-.671L7.207,6.793,6.5,7.5,8.993,9.993A.475.475,0,0,0,9.664,9.993Z"></path></svg>
+										</span>
+										1:48
+										<span>
+											<!-- Directly copied from: https://www.ns.nl/reisplanner -->
+											<svg fill="#ffc917" height="12" viewBox="0 0 13 12" width="13" xmlns="http://www.w3.org/2000/svg"><path d="M8.586,3.879a2.5,2.5,0,1,0-.707.707L13,9.707V8.293ZM7.561,3.561a1.5,1.5,0,1,1,0-2.121A1.491,1.491,0,0,1,7.561,3.561ZM6.5,7a2.5,2.5,0,0,0-1.379.414L0,2.293V3.707L4.414,8.121A2.5,2.5,0,1,0,6.5,7Zm1.061,3.561A1.5,1.5,0,0,1,5.439,8.44h0a1.5,1.5,0,1,1,2.122,2.121Z"></path></svg>
+										</span>
+										1x
+										<span>
+											<svg fill="#ffc917" _ngcontent-qwy-c46="" height="14px" viewBox="0 0 14 14" width="14px" xmlns="http://www.w3.org/2000/svg" class="ng-star-inserted"><path _ngcontent-qwy-c46="" d="M14,14H0V3H3V0H14ZM1,13H13V1H4V4H1Z"></path></svg>
+										</span>
+										6
+									</p>
+								</header>
+								<section>
+									<p><i>IC</i> Intercity</p>
+									<div class="reis-assistentie">
+										<p>
+											NS Reisassistentie
+										</p>
+									</div>
+								</section>
+							</article>
+						</button>
+					</li>
+					<li>
+						<button>
+							<article>
+								<header>
+									<h3>
+										<span class="vertrek">10:36</span>
+										<span class="arrow">
+											<!-- Directly copied from: https://www.ns.nl/reisplanner -->
+											<svg height="11" viewBox="0 0 11.707 11" width="11.707" xmlns="http://www.w3.org/2000/svg"><polygon fill="#ffc917" points="10.293 5.5 4.793 11 6.207 11 11.707 5.5 6.207 0 4.793 0 10.293 5.5"></polygon><path fill="#ffc917" d="M.5,5h9.728a.5.5,0,0,1,.5.5h0a.5.5,0,0,1-.5.5H.5A.5.5,0,0,1,0,5.5H0A.5.5,0,0,1,.5,5Z"></path></svg>
+										</span>
+										<span class="aankomst">11:56</span>
+									</h3>
+									<p>
+										<span>
+											<!-- Directly copied from: https://www.ns.nl/reisplanner -->
+											<svg height="14" viewBox="0 0 14 14" width="14" xmlns="http://www.w3.org/2000/svg" fill="#ffc917"><path d="M7,14a7,7,0,1,1,7-7A7.008,7.008,0,0,1,7,14ZM7,.9A6.058,6.058,0,0,0,1,7a6.058,6.058,0,0,0,6,6.1A6.058,6.058,0,0,0,13,7,6.058,6.058,0,0,0,7,.9Z"></path><path d="M7,2H7a.5.5,0,0,0-.5.5v5h1v-5A.5.5,0,0,0,7,2Z"></path><path d="M9.664,9.993,9.7,9.957a.475.475,0,0,0,0-.671L7.207,6.793,6.5,7.5,8.993,9.993A.475.475,0,0,0,9.664,9.993Z"></path></svg>
+										</span>
+										1:48
+										<span>
+											<!-- Directly copied from: https://www.ns.nl/reisplanner -->
+											<svg fill="#ffc917" height="12" viewBox="0 0 13 12" width="13" xmlns="http://www.w3.org/2000/svg"><path d="M8.586,3.879a2.5,2.5,0,1,0-.707.707L13,9.707V8.293ZM7.561,3.561a1.5,1.5,0,1,1,0-2.121A1.491,1.491,0,0,1,7.561,3.561ZM6.5,7a2.5,2.5,0,0,0-1.379.414L0,2.293V3.707L4.414,8.121A2.5,2.5,0,1,0,6.5,7Zm1.061,3.561A1.5,1.5,0,0,1,5.439,8.44h0a1.5,1.5,0,1,1,2.122,2.121Z"></path></svg>
+										</span>
+										1x
+										<span>
+											<svg fill="#ffc917" _ngcontent-qwy-c46="" height="14px" viewBox="0 0 14 14" width="14px" xmlns="http://www.w3.org/2000/svg" class="ng-star-inserted"><path _ngcontent-qwy-c46="" d="M14,14H0V3H3V0H14ZM1,13H13V1H4V4H1Z"></path></svg>
+										</span>
+										6
+									</p>
+								</header>
+								<section>
+									<p><i>IC</i> Intercity</p>
+									<div class="reis-assistentie">
+										<p>
+											NS Reisassistentie
+										</p>
+									</div>
+								</section>
+							</article>
+						</button>
+					</li>
+					<li>
+						<button>
+							<article>
+								<header>
+									<h3>
+										<span class="vertrek">10:36</span>
+										<span class="arrow">
+											<!-- Directly copied from: https://www.ns.nl/reisplanner -->
+											<svg height="11" viewBox="0 0 11.707 11" width="11.707" xmlns="http://www.w3.org/2000/svg"><polygon fill="#ffc917" points="10.293 5.5 4.793 11 6.207 11 11.707 5.5 6.207 0 4.793 0 10.293 5.5"></polygon><path fill="#ffc917" d="M.5,5h9.728a.5.5,0,0,1,.5.5h0a.5.5,0,0,1-.5.5H.5A.5.5,0,0,1,0,5.5H0A.5.5,0,0,1,.5,5Z"></path></svg>
+										</span>
+										<span class="aankomst">11:56</span>
+									</h3>
+									<p>
+										<span>
+											<!-- Directly copied from: https://www.ns.nl/reisplanner -->
+											<svg height="14" viewBox="0 0 14 14" width="14" xmlns="http://www.w3.org/2000/svg" fill="#ffc917"><path d="M7,14a7,7,0,1,1,7-7A7.008,7.008,0,0,1,7,14ZM7,.9A6.058,6.058,0,0,0,1,7a6.058,6.058,0,0,0,6,6.1A6.058,6.058,0,0,0,13,7,6.058,6.058,0,0,0,7,.9Z"></path><path d="M7,2H7a.5.5,0,0,0-.5.5v5h1v-5A.5.5,0,0,0,7,2Z"></path><path d="M9.664,9.993,9.7,9.957a.475.475,0,0,0,0-.671L7.207,6.793,6.5,7.5,8.993,9.993A.475.475,0,0,0,9.664,9.993Z"></path></svg>
+										</span>
+										1:48
+										<span>
+											<!-- Directly copied from: https://www.ns.nl/reisplanner -->
+											<svg fill="#ffc917" height="12" viewBox="0 0 13 12" width="13" xmlns="http://www.w3.org/2000/svg"><path d="M8.586,3.879a2.5,2.5,0,1,0-.707.707L13,9.707V8.293ZM7.561,3.561a1.5,1.5,0,1,1,0-2.121A1.491,1.491,0,0,1,7.561,3.561ZM6.5,7a2.5,2.5,0,0,0-1.379.414L0,2.293V3.707L4.414,8.121A2.5,2.5,0,1,0,6.5,7Zm1.061,3.561A1.5,1.5,0,0,1,5.439,8.44h0a1.5,1.5,0,1,1,2.122,2.121Z"></path></svg>
+										</span>
+										1x
+										<span>
+											<svg fill="#ffc917" _ngcontent-qwy-c46="" height="14px" viewBox="0 0 14 14" width="14px" xmlns="http://www.w3.org/2000/svg" class="ng-star-inserted"><path _ngcontent-qwy-c46="" d="M14,14H0V3H3V0H14ZM1,13H13V1H4V4H1Z"></path></svg>
+										</span>
+										6
+									</p>
+								</header>
+								<section>
+									<p><i>IC</i> Intercity</p>
+									<div class="reis-assistentie">
+										<p>
+											NS Reisassistentie
+										</p>
+									</div>
+								</section>
+							</article>
+						</button>
+					</li>
+					<li>
+						<button>
+							<article>
+								<header>
+									<h3>
+										<span class="vertrek">10:36</span>
+										<span class="arrow">
+											<!-- Directly copied from: https://www.ns.nl/reisplanner -->
+											<svg height="11" viewBox="0 0 11.707 11" width="11.707" xmlns="http://www.w3.org/2000/svg"><polygon fill="#ffc917" points="10.293 5.5 4.793 11 6.207 11 11.707 5.5 6.207 0 4.793 0 10.293 5.5"></polygon><path fill="#ffc917" d="M.5,5h9.728a.5.5,0,0,1,.5.5h0a.5.5,0,0,1-.5.5H.5A.5.5,0,0,1,0,5.5H0A.5.5,0,0,1,.5,5Z"></path></svg>
+										</span>
+										<span class="aankomst">11:56</span>
+									</h3>
+									<p>
+										<span>
+											<!-- Directly copied from: https://www.ns.nl/reisplanner -->
+											<svg height="14" viewBox="0 0 14 14" width="14" xmlns="http://www.w3.org/2000/svg" fill="#ffc917"><path d="M7,14a7,7,0,1,1,7-7A7.008,7.008,0,0,1,7,14ZM7,.9A6.058,6.058,0,0,0,1,7a6.058,6.058,0,0,0,6,6.1A6.058,6.058,0,0,0,13,7,6.058,6.058,0,0,0,7,.9Z"></path><path d="M7,2H7a.5.5,0,0,0-.5.5v5h1v-5A.5.5,0,0,0,7,2Z"></path><path d="M9.664,9.993,9.7,9.957a.475.475,0,0,0,0-.671L7.207,6.793,6.5,7.5,8.993,9.993A.475.475,0,0,0,9.664,9.993Z"></path></svg>
+										</span>
+										1:48
+										<span>
+											<!-- Directly copied from: https://www.ns.nl/reisplanner -->
+											<svg fill="#ffc917" height="12" viewBox="0 0 13 12" width="13" xmlns="http://www.w3.org/2000/svg"><path d="M8.586,3.879a2.5,2.5,0,1,0-.707.707L13,9.707V8.293ZM7.561,3.561a1.5,1.5,0,1,1,0-2.121A1.491,1.491,0,0,1,7.561,3.561ZM6.5,7a2.5,2.5,0,0,0-1.379.414L0,2.293V3.707L4.414,8.121A2.5,2.5,0,1,0,6.5,7Zm1.061,3.561A1.5,1.5,0,0,1,5.439,8.44h0a1.5,1.5,0,1,1,2.122,2.121Z"></path></svg>
+										</span>
+										1x
+										<span>
+											<svg fill="#ffc917" _ngcontent-qwy-c46="" height="14px" viewBox="0 0 14 14" width="14px" xmlns="http://www.w3.org/2000/svg" class="ng-star-inserted"><path _ngcontent-qwy-c46="" d="M14,14H0V3H3V0H14ZM1,13H13V1H4V4H1Z"></path></svg>
+										</span>
+										6
+									</p>
+								</header>
+								<section>
+									<p><i>IC</i> Intercity</p>
+									<div class="reis-assistentie">
+										<p>
+											NS Reisassistentie
+										</p>
+									</div>
+								</section>
+							</article>
+						</button>
+					</li>
+				</ol>
+				<article id="option-content">
+					<header>
+						<a href="/reis-assistentie/geboekte-reizen.html" class="submit">Vraag Reisassistentie aan</a>
+						<div>
+							<div class="vertrek-aankomst-container">
+								<div>
+									<p>Vertrek</p>
+									<h3>10:36</h3>
+								</div>
+								<span class="arrow">
+									<!-- Directly copied from: https://www.ns.nl/reisplanner -->
+									<svg fill="#ffc917" height="11" viewBox="0 0 11.707 11" width="11.707" xmlns="http://www.w3.org/2000/svg"><polygon points="10.293 5.5 4.793 11 6.207 11 11.707 5.5 6.207 0 4.793 0 10.293 5.5"></polygon><path d="M.5,5h9.728a.5.5,0,0,1,.5.5h0a.5.5,0,0,1-.5.5H.5A.5.5,0,0,1,0,5.5H0A.5.5,0,0,1,.5,5Z"></path></svg>
+								</span>
+								<div>
+									<p>Aankomst</p>
+									<h3>11:56</h3>
+								</div>
+							</div>
+							<div class="flex-right">
+								<div class="tijd-overstap-container">
+									<p>
+										<span>
+											<!-- Directly copied from: https://www.ns.nl/reisplanner -->
+											<svg fill="#ffc917" height="14" viewBox="0 0 14 14" width="14" xmlns="http://www.w3.org/2000/svg"><path d="M7,14a7,7,0,1,1,7-7A7.008,7.008,0,0,1,7,14ZM7,.9A6.058,6.058,0,0,0,1,7a6.058,6.058,0,0,0,6,6.1A6.058,6.058,0,0,0,13,7,6.058,6.058,0,0,0,7,.9Z"></path><path d="M7,2H7a.5.5,0,0,0-.5.5v5h1v-5A.5.5,0,0,0,7,2Z"></path><path d="M9.664,9.993,9.7,9.957a.475.475,0,0,0,0-.671L7.207,6.793,6.5,7.5,8.993,9.993A.475.475,0,0,0,9.664,9.993Z"></path></svg>
+										</span>
+										1:48
+									</p>
+									<p>
+										1x
+												<span>
+													<svg fill="#ffc917" _ngcontent-qwy-c46="" height="14px" viewBox="0 0 14 14" width="14px" xmlns="http://www.w3.org/2000/svg" class="ng-star-inserted"><path _ngcontent-qwy-c46="" d="M14,14H0V3H3V0H14ZM1,13H13V1H4V4H1Z"></path></svg>
+												</span>
+									</p>
+								</div>
+								<div class="perron-container">
+									<svg fill="#ffc917" _ngcontent-kes-c46="" aria-labelledby="fullTrackDescription" height="45px" viewBox="0 0 45 45" width="45px" xmlns="http://www.w3.org/2000/svg" class="ng-star-inserted"><path _ngcontent-kes-c46="" d="M45,45H0V9H9V0H45ZM1,44H44V1H10v9H1Z"></path><text _ngcontent-kes-c46="" aria-hidden="true" dominant-baseline="middle" text-anchor="middle" x="50%" y="50%">6</text></svg>
+								</div>
+							</div>
+						</div>
+					</header>
+				</article>
+			</main>
+		</div>
+	</body>
+	<script src="js/main.js"></script>
+</html>

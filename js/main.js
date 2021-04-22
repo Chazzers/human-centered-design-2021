@@ -16,13 +16,8 @@ Date.prototype.addHours = function(h) {
 	return this;
 }
 
-nietNaarWerk.addEventListener('click', () => {
-	naarWerkContainer.style.display = 'none'
-	vanWerkContainer.style.display = 'block'
-})
-
 nietVanWerk.addEventListener('click', () => {
-	vanWerkContainer.style.display = 'none'
+	naarWerkContainer.style.display = 'none'
 	waarNaarToeContainer.style.display = 'block'
 })
 
