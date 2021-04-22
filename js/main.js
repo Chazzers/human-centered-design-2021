@@ -63,9 +63,6 @@ if(allTravelOptions.length) {
 	allTravelOptions[0].focus()
 	document.addEventListener('keyup', event => {
 		event.preventDefault()
-		// if(event.key === 'ArrowUp' || event.key ==='ArrowDown' || event.key === 'ArrowLeft' || event.key === 'ArrowRight' || event.key === 'Space') {
-			
-		// }
 		if(event.key === 'ArrowUp') {
 			index -= 1
 		}
