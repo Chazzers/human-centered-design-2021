@@ -1,5 +1,6 @@
 const naarWerkContainer = document.querySelector('.naar-werk-container')
 const vanWerkContainer = document.querySelector('.van-werk-container')
+const workOrHome = document.querySelectorAll('.work-or-home')
 const naarWerkLink = document.getElementById('naar-werk')
 const vanWerkLink = document.getElementById('van-werk')
 const nietNaarWerk = document.getElementById('niet-naar-werk')
@@ -17,43 +18,68 @@ Date.prototype.addHours = function(h) {
 	return this;
 }
 
-if(nietVanWerk) {
-	nietVanWerk.addEventListener('click', () => {
-		naarWerkContainer.style.display = 'none'
-		waarNaarToeContainer.style.display = 'block'
+if(naarWerkContainer) {
+	// nietVanWerk.addEventListener('click', () => {
+	// 	naarWerkContainer.style.display = 'none'
+	// 	waarNaarToeContainer.style.display = 'block'
+	// })
+	let index = 0
+	document.addEventListener('keyup', event => {
+		event.preventDefault()
+		if(event.key === 'ArrowRight') {
+			index -= 1
+		}
+		if(event.key === 'ArrowLeft') {
+			index += 1
+		}
+		if(index < 0) {
+			index = workOrHome.length - 1
+		}
+		if(index > workOrHome.length - 1){
+			index = 0;
+		}
+		if(event.key === 'ArrowRight' || event.key === 'ArrowLeft') {
+			workOrHome[index].focus()
+		}
+		if(event.code === 'Space') {
+			console.log('hello')
+			document.activeElement.click()
+		}
 	})
 	
-	form.addEventListener('submit', (e) => {
-		e.preventDefault()
-		const fromValue = fromChoice.value
-		const toValue = toChoice.value
-		const timeValue = formTime.value
-		const dateValue = formDate.value
-		const when = new Date(`${dateValue} ${timeValue}`)
-	
-		console.log(when)
-	
-		const searchParams = new URLSearchParams({
-			vertrek: fromValue,
-			aankomst: toValue,
-			type: 'vertrek',
-			tijd: when
+	if(form) {
+		form.addEventListener('submit', (e) => {
+			e.preventDefault()
+			const fromValue = fromChoice.value
+			const toValue = toChoice.value
+			const timeValue = formTime.value
+			const dateValue = formDate.value
+			const when = new Date(`${dateValue} ${timeValue}`)
+		
+			console.log(when)
+		
+			const searchParams = new URLSearchParams({
+				vertrek: fromValue,
+				aankomst: toValue,
+				type: 'vertrek',
+				tijd: when
+			})
+			const url = `https://www.ns.nl/reisplanner/#/?${searchParams}`
+		
+			window.location.href = url;
 		})
-		const url = `https://www.ns.nl/reisplanner/#/?${searchParams}`
-	
-		window.location.href = url;
-	})
-	
-	const today = new Date()
-	const tomorrow = new Date(today)
-	
-	today.addHours(1)
-	tomorrow.setDate(tomorrow.getDate() + 1)
-	tomorrow.setHours(8)
-	tomorrow.setMinutes(0)
-	tomorrow.setMilliseconds(0)
-	const tomorrowHref = new Date(tomorrow.getTime() - new Date().getTimezoneOffset() * 60 * 1000).toISOString()
-	const todayHref = new Date(today.getTime() - new Date().getTimezoneOffset() * 60 * 1000).toISOString()
+		
+		const today = new Date()
+		const tomorrow = new Date(today)
+		
+		today.addHours(1)
+		tomorrow.setDate(tomorrow.getDate() + 1)
+		tomorrow.setHours(8)
+		tomorrow.setMinutes(0)
+		tomorrow.setMilliseconds(0)
+		const tomorrowHref = new Date(tomorrow.getTime() - new Date().getTimezoneOffset() * 60 * 1000).toISOString()
+		const todayHref = new Date(today.getTime() - new Date().getTimezoneOffset() * 60 * 1000).toISOString()
+	}
 }
 
 
