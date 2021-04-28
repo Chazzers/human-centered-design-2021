@@ -7,14 +7,14 @@
 	<body>
 		<div class="metallica-logo"></div>
 		<div>
-			<section class="reisplanner">
+			<!-- <section class="reisplanner">
 				<form action="#">
 					<fieldset>
 						<legend>Locaties</legend>
 						<div class="locaties">
 							<label>
 								Van:
-								<input type="text" value="Eindhoven Centraal">
+								<input id="van" type="text" name="van">
 							</label>
 							<div class="switcher">
 								<button type="button" class="switcher-btn">
@@ -22,14 +22,14 @@
 							</div>
 							<label>
 								Naar:
-								<input type="text" value="Amsterdam Centraal">
+								<input id="naar" type="text" name="naar">
 							</label>
 						</div>
 					</fieldset>
 					<fieldset>
 						<legend>Reis opties</legend>
 						<div class="reis-opties">
-							<input id="vertrek" type="radio" value="vertrek" name="vertrekOfAankomst" checked>
+							<input id="vertrek" type="radio" value="vertrek" name="vertrekOfAankomst">
 							<label for="vertrek" class="vertrek-aankomst-radio">
 								Vertrek
 							</label>
@@ -38,14 +38,14 @@
 								Aankomst
 							</label>
 							<label class="datum">
-								Vandaag
-								<input type="date" name="date" value="Vandaag">
+								Datum
+								<input id="date" type="date" name="date" value="Vandaag">
 							</label>
 							<label class="tijd">
-								11:56
-								<input type="time" value="11:56" name="time">
+								Tijd
+								<input type="time" id="time" value="11:56" name="time">
 							</label>
-							<button type="button" value="Nu" name="now">
+							<button id="now" type="button" value="Nu" name="now">
 								<span class="refresh"></span>
 								<span class="text">Nu</span>
 							</button>
@@ -54,14 +54,14 @@
 								<input type="checkbox" name="options" value="options">
 							</label>
 							<ul>
-								<li><span>X</span><button type="button">Toegankelijk reizen</button></li>
+								<li><span>X</span><button name="toegankelijk" type="button" value="true">Toegankelijk reizen</button></li>
 							</ul>
 						</div>
 					</fieldset>
 					<button class="submit" type="submit">Plannen</button>
 				</form>
 				
-			</section>
+			</section> -->
 			<main>
 				<ol>
 					<li>

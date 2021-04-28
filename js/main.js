@@ -12,6 +12,14 @@ const toChoice = document.getElementById('to-choice')
 const formTime = document.getElementById('time')
 const formDate = document.getElementById('date')
 const reisAssistentieAanvraagButton = document.querySelector('#option-content header a')
+const reisplannerContainer = document.querySelector('.reisplanner')
+const van = document.getElementById('van')
+const naar = document.getElementById('naar')
+const vertrekInput = document.getElementById('vertrek')
+const aankomstInput = document.getElementById('aankomst')
+const dateInput = document.getElementById('date')
+const timeInput = document.getElementById('time')
+const nowInput = document.getElementById('now')
 
 Date.prototype.addHours = function(h) {
 	this.setTime(this.getTime() + (h*60*60*1000));
@@ -74,11 +82,14 @@ if(naarWerkContainer) {
 		
 		today.addHours(1)
 		tomorrow.setDate(tomorrow.getDate() + 1)
-		tomorrow.setHours(8)
+		tomorrow.setHours(10)
 		tomorrow.setMinutes(0)
 		tomorrow.setMilliseconds(0)
 		const tomorrowHref = new Date(tomorrow.getTime() - new Date().getTimezoneOffset() * 60 * 1000).toISOString()
 		const todayHref = new Date(today.getTime() - new Date().getTimezoneOffset() * 60 * 1000).toISOString()
+
+		naarWerkLink.href = `/reis-assistentie/?vertrek=Eindhoven%20Centraal&vertrektype=treinstation&aankomst=Amsterdam%20Centraal&aankomsttype=treinstation&type=vertrek&tijd=${tomorrowHref}&toegankelijk=true`
+		vanWerkLink.href= `/reis-assistentie/?vertrek=Amsterdam%20Centraal&vertrektype=treinstation&aankomst=Eindhoven%20Centraal&aankomsttype=treinstation&type=vertrek&tijd=${todayHref}&toegankelijk=true`
 	}
 }
 
@@ -114,9 +125,52 @@ if(allTravelOptions.length) {
 	})
 }
 
+if(reisplannerContainer) {
+	console.log(window.location)
+	const params = new URLSearchParams(window.location.search);
 
 
+	// https://attacomsian.com/blog/javascript-convert-query-string-to-object#:~:text=In%20vanilla%20JavaScript%2C%20there%20is,keys%20to%20create%20an%20object.
+	const parseParams = (querystring) => {
 
-// naarWerkLink.href = `https://www.ns.nl/reisplanner/#/?vertrek=Eindhoven%20Centraal&vertrektype=treinstation&aankomst=Amsterdam%20Centraal&aankomsttype=treinstation&type=vertrek&tijd=${tomorrowHref}&toegankelijk=true`
-// vanWerkLink.href= `https://www.ns.nl/reisplanner/#/?vertrek=Eindhoven%20Centraal&vertrektype=treinstation&aankomst=Amsterdam%20Centraal&aankomsttype=treinstation&type=vertrek&tijd=${todayHref}&toegankelijk=true`
+		// parse query string
+		const params = new URLSearchParams(querystring);
+	
+		const obj = {};
+	
+		// iterate over all keys
+		for (const key of params.keys()) {
+			if (params.getAll(key).length > 1) {
+				obj[key] = params.getAll(key);
+			} else {
+				obj[key] = params.get(key);
+			}
+		}
+	
+		return obj;
+	};
 
+	const queryObject = parseParams(params)
+
+	const { vertrek, vertrektype, aankomst, aankomsttype, type, toegankelijk, tijd } = queryObject
+
+	van.value = vertrek
+	naar.value = aankomst
+	if(type === 'vertrek') vertrekInput.checked = true
+	if(type === 'aankomst') aankomstInput.checked = true
+	const time = new Date(tijd)
+	const newTime = time.toISOString()
+	const newTimeArray = newTime.split('T')[1].split('.')[0].split(':')
+	const newTimeString = `${newTimeArray[0]}:${newTimeArray[1]}`
+	dateInput.value = newTime.split('T')[0]
+	timeInput.value = newTimeString
+
+	nowInput.addEventListener('click', () => {
+		const time = new Date()
+		const currentHours = time.getHours()
+		const currentMinutes = time.getMinutes()
+		const currentTime = `${currentHours}:${currentMinutes}`
+		timeInput.value = currentTime
+	})
+	
+}

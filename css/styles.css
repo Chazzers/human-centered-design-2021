@@ -381,10 +381,6 @@ form {
 	background-color: rgba(0,0,0,0.3);
 }
 
-.reisplanner * {
-	pointer-events: none;			
-}
-
 .reis-opties button span{
 	vertical-align: middle;
 }
