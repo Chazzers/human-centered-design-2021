@@ -5,51 +5,17 @@
 		<link rel="stylesheet" href="../css/styles.css">
 	</head>
 	<body>
+		<header class="nav">
+			<label>
+				<input type="checkbox" id="toggle-music">🎸?
+			</label>
+		</header>
 		<div class="metallica-logo"></div>
-		<div class="geboekte-reizen">
+		<main class="geboekte-reizen">
 			<h1>Mijn geboekte reizen</h1>
-			<form id="geboekte-reizen-form" action="#">
-				<div>
-					<label class="select-label">
-						Periode: 
-						<select name="periode" id="periode">
-							<option value="toekomst">Toekomst</option>
-							<option value="laatsteZevenDagen">
-								Laatste 7 dagen
-							</option>
-							<option value="dezeMaand">
-								Deze maand
-							</option>
-							<option value="vorigeMaand">
-								Vorige maand
-							</option>
-							<option value="laatsteJaar">
-								Laatste jaar
-							</option>
-							<option value="alles">
-								Alles
-							</option>
-							<option value="handmatig">
-								Handmatig
-							</option>
-						</select>
-					</label>
-				</div>
-				<div>
-					<label>
-						Van:
-						<input type="date" name="from">
-					</label>
-					<label>
-						Tot en met:
-						<input type="date" name="till">
-					</label>
-					<button class="submit" type="submit">Tonen ></button>
-				</div>
-			</form>
-			<div>
-				<div></div>
-			</div>
+			<ul class="geboekte-reizen-lijst">
+				
+			</ul>
 		</div>
 	</body>
 	<script src="../js/main.js"></script>

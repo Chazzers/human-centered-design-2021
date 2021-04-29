@@ -5,12 +5,17 @@
 		<link rel="stylesheet" href="css/styles.css">
 	</head>
 	<body>
+		<header class="nav">
+			<label>
+				<input type="checkbox" id="toggle-music">🎸?
+			</label>
+		</header>
 		<div class="metallica-logo"></div>
 		<div class="not-ns">
 			<div class="naar-werk-container">
 				<h1>Naar werk of naar huis?</h1>
-				<a class="work-or-home" id="naar-werk">Naar werk</a>
-				<a class="work-or-home" id="van-werk">Naar huis</a>
+				<a class="work-or-home" id="naar-werk" target="_blank">Naar werk</a>
+				<a class="work-or-home" id="van-werk" target="_blank">Naar huis</a>
 				<!-- <button id="niet-van-werk">Geen van beide</button> -->
 			</div>
 			<div class="waar-naar-toe-container">
@@ -45,6 +50,9 @@
 				</form>
 			</div>
 		</div>
+		<audio id="a" src="../assets/samples/a.mp3"></audio>
+		<audio id="d" src="../assets/samples/d.mp3"></audio>
+		<audio id="db" src="../assets/samples/db.mp3"></audio>
 	</body>
 	<script src="js/main.js"></script>
 </html>
