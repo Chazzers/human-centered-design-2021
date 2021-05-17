@@ -19,7 +19,5 @@
     "url": "https://github.com/Chazzers/human-centered-design-2021/issues"
   },
   "homepage": "https://github.com/Chazzers/human-centered-design-2021#readme",
-  "dependencies": {
-    "moment": "^2.29.1"
-  }
+  "dependencies": {}
 }

@@ -25,23 +25,313 @@ const toggleGuitar = document.getElementById('toggle-music')
 const aKeyGuitar = document.getElementById('a')
 const dKeyGuitar = document.getElementById('d')
 const dbKeyGuitar = document.getElementById('db')
+const to =  document.getElementById('to')
+const from =  document.getElementById('from')
+const buttonFromTo = document.querySelectorAll('.button-from-to')
+const buttonNotHome = document.getElementById('not-work-home')
+const legenda = document.querySelector('.legenda')
+const keyboardLabels = document.querySelector('.van-naar-legenda-label')
 
 Date.prototype.addHours = function(h) {
 	this.setTime(this.getTime() + (h*60*60*1000));
 	return this;
 }
 
+const left = [
+	'q',
+	'w',
+	'e',
+	'a',
+	's',
+	'd',
+	'z',
+	'x',
+	'c'
+]
+
+const middle =  [
+	'r',
+	't',
+	'y',
+	'f',
+	'g',
+	'h',
+	'v',
+	'b',
+	'n'
+]
+
+const right = [
+	'u',
+	'i',
+	'o',
+	'j',
+	'k',
+	'l',
+	'm',
+	',',
+	'.'
+]
+
+
 
 
 if(naarWerkContainer) {
-	// nietVanWerk.addEventListener('click', () => {
-	// 	naarWerkContainer.style.display = 'none'
-	// 	waarNaarToeContainer.style.display = 'block'
-	// })
+	nietVanWerk.addEventListener('click', () => {
+		naarWerkContainer.style.display = 'none'
+		waarNaarToeContainer.style.display = 'block'
+		keyboardLabels.style.display = 'flex'
+		legenda.classList.add('anders')
+		if(form) {
+			form.addEventListener('submit', (e) => {
+				e.preventDefault()
+				const fromValue = from.value
+				const toValue = to.value
+				const today = new Date()
+				const when = new Date(today.getTime() - new Date().getTimezoneOffset() * 60 * 1000).toISOString()
+			
+				console.log(when)
+			
+				const searchParams = new URLSearchParams({
+					vertrek: fromValue,
+					aankomst: toValue,
+					type: 'vertrek',
+					tijd: when
+				})
+				const url = `${window.location.origin}/reis-assistentie/geboekte-reizen.html?${searchParams}`
+
+				window.open(url, '_blank')
+			})
+		}
+	
+		const locations = [
+			'Amsterdam Centraal',
+			'Eindhoven',
+			'Akkrum',
+			'Alkmaar',
+			'Almelo',
+			'Almere Buiten',
+			'Almere Centrum',
+			'Almere Muziekwijk',
+			'Alphen aan den Rijn',
+			'Amersfoort',
+			'Amersfoort Schothorst',
+			'Amersfoort Vathorst',
+			'Amsterdam Amstel',
+			'Amsterdam Bijlmer Arena',
+			'Amsterdam Lelylaan',
+			'Amsterdam Rai',
+			'Amsterdam Science Park',
+			'Amsterdam Sloterdijk',
+			'Amsterdam Zuid',
+			'Anna Paulowna',
+			'Apeldoorn',
+			'Arnhem',
+			'Arnhem Zuid',
+			'Assen',
+			'Baarn',
+			'Barendrecht',
+			'Beilen',
+			'Bergen op Zoom',
+			'Best',
+			'Beverwijk',
+			'Bilthoven',
+			'Bloemendaal',
+			'Bodegraven',
+			'Bovenkarspel Flora',
+			'Boxtel',
+			'Breda',
+			'Brummen',
+			'Capelle Schollevaar',
+			'Castricum',
+			'Culemborg',
+			'Delft',
+			'Den Bosch',
+			'Den Bosch Oost',
+			'Den Haag Centraal',
+			'Den Haag Holland Spoor',
+			'Den Haag Ypenburg',
+			'Den Helder',
+			'Den Helder Zuid',
+			'Deurne',
+			'Deventer',
+			'Deventer Colmschate',
+			'Diemen',
+			'Dieren',
+			'Dordrecht',
+			'Driebergen-Zeist',
+			'Dronten',
+			'Duivendrecht',
+			'Ede - Wageningen',
+			'Enkhuizen',
+			'Enschede',
+			'Ermelo',
+			'Etten - Leur',
+			'Geldermalsen',
+			'Geldrop',
+			'Goes',
+			'Gouda',
+			'Gouda Goverwelle',
+			'Groningen Europapark',
+			'Groningen',
+			'Grou - Jirnsum',
+			'Haarlem',
+			'Haarlem Spaarnwoude',
+			'Halfweg - Zwanenburg',
+			'Harderwijk',
+			'Heemstede Aerdenhout',
+			'Heerenveen',
+			'Heerhugowaard',
+			'Heerlen',
+			'Heeze',
+			'Heiloo',
+			'Helmond',
+			'Helmond Brouwhuis',
+			'Hengelo',
+			'Hillegom',
+			'Hilversum',
+			'Hilversum Sportpark',
+			'Hoofddorp',
+			'Hoogeveen',
+			'Hoorn',
+			'Hoorn Kersenboogerd',
+			'Holten',
+			'Horst - Sevenum',
+			'Houten',
+			'Kampen Zuid',
+			'Kapelle - Biezelinge',
+			'Krabbendijke',
+			'Kruiningen Yerseke',
+			'Lansingerland Zoetermeer',
+			'Leeuwarden',
+			'Leiden Centraal',
+			'Leiden Lammenschans',
+			'Lelystad Centrum',
+			'Maastricht',
+			'Maarheeze',
+			'Meppel',
+			'Middelburg',
+			'Naarden - Bussum',
+			'Nieuw Vennep',
+			'Nijkerk',
+			'Nijmegen',
+			'Nijmegen Dukenburg',
+			'Nunspeet',
+			'Olst',
+			'Oss',
+			'Oss West',
+			'Oudenbosch',
+			'Overveen',
+			'Putten',
+			'Purmerend',
+			'Purmerend Overwhere',
+			'Ravenstein',
+			'Rheden',
+			'Rhenen',
+			'Rijssen',
+			'Rijswijk',
+			'Rilland - Bath',
+			'Roermond',
+			'Roosendaal',
+			'Rotterdam Alexander',
+			'Rotterdam Centraal',
+			'Santpoort Zuid',
+			'Schagen',
+			'Sassenheim',
+			'Schiedam Centrum',
+			'Schiphol Airport',
+			'Sittard',
+			'Soest Zuid',
+			'Steenwijk',
+			'Tiel',
+			'Tilburg',
+			'Twello',
+			'Uitgeest',
+			'Utrecht Centraal Station',
+			'Utrecht Maliebaan',
+			'Veenendaal Centrum',
+			'Veenendaal de Klomp',
+			'Veenendaal West',
+			'Venlo',
+			'Vlissingen',
+			'Vlissingen Souburg',
+			'Voorhout',
+			'Weert',
+			'Weesp',
+			'Wijchen',
+			'Wijhe',
+			'Woerden',
+			'Wolvega',
+			'Wormerveer',
+			'Zaandam',
+			'Zaandam Kogerveld',
+			'Zaandijk',
+			'Zaanse Schans',
+			'Zandvoort aan Zee',
+			'Zevenbergen',
+			'Zoetermeer',
+			'Zoetermeer Oost',
+			'Zutphen',
+			'Zwijndrecht',
+			'Zwolle',
+		]
+		locations.forEach(location => {
+			const optionFrom = document.createElement('option')
+			optionFrom.value = location
+			optionFrom.innerHTML = location
+			optionFrom.classList.add('btn-from-to')
+			from.appendChild(optionFrom)
+		})
+		locations[0] = 'Eindhoven'
+		locations[1] = 'Amsterdam Centraal'
+		locations.forEach(location => {
+			const optionTo = document.createElement('option')
+			optionTo.value = location
+			optionTo.innerHTML = location
+			optionTo.classList.add('btn-from-to')
+			to.appendChild(optionTo)
+		})
+	})
 	let index = 0
+
+			
+	const today = new Date()
+	const tomorrow = new Date(today)
+	
+	today.addHours(1)
+	tomorrow.setDate(tomorrow.getDate() + 1)
+	tomorrow.setHours(10)
+	tomorrow.setMinutes(0)
+	tomorrow.setMilliseconds(0)
+	const tomorrowHref = new Date(tomorrow.getTime() - new Date().getTimezoneOffset() * 60 * 1000).toISOString()
+	const todayHref = new Date(today.getTime() - new Date().getTimezoneOffset() * 60 * 1000).toISOString()
+	naarWerkLink.href = `${window.location.origin}/reis-assistentie/geboekte-reizen.html?vertrek=Eindhoven%20Centraal&vertrektype=treinstation&aankomst=Amsterdam%20Centraal&aankomsttype=treinstation&type=vertrek&tijd=${tomorrowHref}&toegankelijk=true`
+	vanWerkLink.href= `${window.location.origin}/reis-assistentie/geboekte-reizen.html?vertrek=Amsterdam%20Centraal&vertrektype=treinstation&aankomst=Eindhoven%20Centraal&aankomsttype=treinstation&type=vertrek&tijd=${todayHref}&toegankelijk=true`
+	
 	document.addEventListener('keyup', event => {
-		event.preventDefault()
+		if((left.includes(event.key) || middle.includes(event.key) || right.includes(event.key)) && naarWerkContainer.style.display === 'none') {
+			event.preventDefault()
+			buttonNotHome.focus()
+			document.activeElement.click()
+		}
+		// first
+		if(left.includes(event.key) && naarWerkContainer.style.display !== 'none') {
+			window.open(`${window.location.origin}/reis-assistentie/geboekte-reizen.html?vertrek=Eindhoven%20Centraal&vertrektype=treinstation&aankomst=Amsterdam%20Centraal&aankomsttype=treinstation&type=vertrek&tijd=${tomorrowHref}&toegankelijk=true`, '_blank')
+			event.preventDefault()
+		}
+		if(middle.includes(event.key) && naarWerkContainer.style.display !== 'none') {
+			event.preventDefault()
+			window.open(`${window.location.origin}/reis-assistentie/geboekte-reizen.html?vertrek=Amsterdam%20Centraal&vertrektype=treinstation&aankomst=Eindhoven%20Centraal&aankomsttype=treinstation&type=vertrek&tijd=${todayHref}&toegankelijk=true`, '_blank')
+		} 
+		if(right.includes(event.key) && naarWerkContainer.style.display !== 'none') {
+			event.preventDefault()
+			nietVanWerk.focus()
+			document.activeElement.click()
+			event.preventDefault()
+		} 
+
 		if(event.key === 'ArrowRight') {
+			event.preventDefault()
 			index -= 1
 			if(toggleGuitar.checked) {
 				aKeyGuitar.currentTime = 0
@@ -49,6 +339,7 @@ if(naarWerkContainer) {
 			}
 		}
 		if(event.key === 'ArrowLeft') {
+			event.preventDefault()
 			index += 1
 			if(toggleGuitar.checked) {
 				dbKeyGuitar.currentTime = 0
@@ -56,15 +347,19 @@ if(naarWerkContainer) {
 			}
 		}
 		if(index < 0) {
+			event.preventDefault()
 			index = workOrHome.length - 1
 		}
-		if(index > workOrHome.length - 1){
+		if(index > workOrHome.length - 1) {
+			event.preventDefault()
 			index = 0;
 		}
 		if(event.key === 'ArrowRight' || event.key === 'ArrowLeft') {
+			event.preventDefault()
 			workOrHome[index].focus()
 		}
 		if(event.code === 'Space') {
+			event.preventDefault()
 			console.log('hello')
 			if(toggleGuitar.checked) {
 				dKeyGuitar.currentTime = 0
@@ -73,47 +368,9 @@ if(naarWerkContainer) {
 			document.activeElement.click()
 		}
 	})
-	
-	if(form) {
-		form.addEventListener('submit', (e) => {
-			e.preventDefault()
-			const fromValue = fromChoice.value
-			const toValue = toChoice.value
-			const timeValue = formTime.value
-			const dateValue = formDate.value
-			const when = new Date(`${dateValue} ${timeValue}`)
-		
-			console.log(when)
-		
-			const searchParams = new URLSearchParams({
-				vertrek: fromValue,
-				aankomst: toValue,
-				type: 'vertrek',
-				tijd: when
-			})
-			const url = `https://www.ns.nl/reisplanner/#/?${searchParams}`
-		
-			window.location.href = url;
-		})
-		
-		const today = new Date()
-		const tomorrow = new Date(today)
-		
-		today.addHours(1)
-		tomorrow.setDate(tomorrow.getDate() + 1)
-		tomorrow.setHours(10)
-		tomorrow.setMinutes(0)
-		tomorrow.setMilliseconds(0)
-		const tomorrowHref = new Date(tomorrow.getTime() - new Date().getTimezoneOffset() * 60 * 1000).toISOString()
-		const todayHref = new Date(today.getTime() - new Date().getTimezoneOffset() * 60 * 1000).toISOString()
-
-		naarWerkLink.href = `/reis-assistentie/?vertrek=Eindhoven%20Centraal&vertrektype=treinstation&aankomst=Amsterdam%20Centraal&aankomsttype=treinstation&type=vertrek&tijd=${tomorrowHref}&toegankelijk=true`
-		vanWerkLink.href= `/reis-assistentie/?vertrek=Amsterdam%20Centraal&vertrektype=treinstation&aankomst=Eindhoven%20Centraal&aankomsttype=treinstation&type=vertrek&tijd=${todayHref}&toegankelijk=true`
-	}
 }
 
 if(resultatenContainer) {
-	console.log(window.location)
 	const params = new URLSearchParams(window.location.search);
 
 	// https://attacomsian.com/blog/javascript-convert-query-string-to-object#:~:text=In%20vanilla%20JavaScript%2C%20there%20is,keys%20to%20create%20an%20object.
@@ -166,6 +423,7 @@ if(resultatenContainer) {
 		timeOne.addHours(0.5)
 		timeOnePlusTime.addHours(0.5)
 	}
+
 	render(`${data.map(item => `		
 		<li class="slide">
 			<a href="/reis-assistentie/geboekte-reizen.html?${params}" target="_blank" class="ov-optie">
@@ -267,11 +525,7 @@ if(allTravelOptions.length) {
 	})
 }
 
-
-console.log(window.location.search)
-
 if(geboekteReizen) {
-	console.log(window.location)
 	const params = new URLSearchParams(window.location.search);
 
 	// https://attacomsian.com/blog/javascript-convert-query-string-to-object#:~:text=In%20vanilla%20JavaScript%2C%20there%20is,keys%20to%20create%20an%20object.

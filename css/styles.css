@@ -454,6 +454,9 @@ article header > div .arrow{
 .not-ns {
 	display: flex;
 	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	min-width: 392px;
 }
 
 .geboekte-reizen {
@@ -689,4 +692,121 @@ select {
 
 body {
 	display: block;
+}
+
+.legenda div kbd{
+	border: solid 1px var(--secondary-color);
+	padding: 0.1rem;
+	min-width: 2rem;
+	min-height: 2rem;
+	display: block;
+	text-align: center;
+}
+
+.legenda div {
+	display: flex;
+	justify-content: space-between;
+	
+}
+
+.legenda {
+	margin-top: 1rem;
+	min-width: 452px;
+	text-align: center;
+	border: 0.25rem solid var(--secondary-color);
+	padding: 0.5rem;
+	background-color: var(--secondary-bg-color);
+	color: var(--secondary-bg-color);
+}
+
+.legenda p {
+}
+
+
+.legenda .keyboard :nth-child(-n + 3){
+	background-color: #60AD64;
+}
+
+.legenda .keyboard :nth-child(3),
+.legenda .keyboard :nth-child(6) {
+	margin-right: 2rem;
+}
+
+
+.legenda .keyboard :nth-child(n + 4):nth-child(-n + 6){
+	background-color: #A95657;
+}
+
+.legenda .keyboard :nth-child(n + 7){
+	background-color: #5356AD;
+}
+
+.legenda .keyboard kbd {
+	margin-right: 0.5rem;
+	margin-bottom: 0.5rem;
+	font-size: 1rem;
+	font-weight: bold;
+}
+
+.legenda .keyboard kbd:last-child {
+	margin-right: 0;
+}
+
+.legenda .bottom kbd {
+	margin-bottom: 0;
+}
+
+.naar-werk-container .btn-container {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+}
+
+.naar-werk-container {
+	min-width: 392px;
+}
+
+.btn-container .btn {
+	min-width: 140px;
+	text-align: center;
+	display: block;
+	margin-right: 1rem;
+	cursor: pointer;
+}
+
+.btn-container .btn:last-child {
+	margin-right: 0;
+}
+
+.van-buttons,
+.naar-buttons {
+	display: none;
+}
+
+.van-naar-legenda-label p {
+	margin-bottom: 0;
+	min-width: 120px;
+	text-align: center;
+}
+
+.legenda .van-naar-legenda-label {
+	justify-content: center;
+	display: none;
+}
+
+.datalist {
+	margin-bottom: 1rem;
+	padding: 0.2rem;
+	font-size: 1rem;
+	font-weight: 500;
+	font-family: var(--font-family);
+}
+
+button {
+	cursor: pointer;
+}
+
+.anders.legenda .keyboard kbd {
+	background-color: #A95657;
+	margin-right: 0.2rem;
 }

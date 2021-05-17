@@ -14,40 +14,118 @@
 		<div class="not-ns">
 			<div class="naar-werk-container">
 				<h1>Naar werk of naar huis?</h1>
-				<a class="work-or-home" id="naar-werk" target="_blank">Naar werk</a>
-				<a class="work-or-home" id="van-werk" target="_blank">Naar huis</a>
-				<!-- <button id="niet-van-werk">Geen van beide</button> -->
+				<div class="btn-container">
+					<a class="work-or-home btn" id="naar-werk" target="_blank">Naar werk</a>
+					<a class="work-or-home btn" id="van-werk" target="_blank">Naar huis</a>
+					<button id="niet-van-werk" class="btn">Anders</button>
+				</div>
 			</div>
 			<div class="waar-naar-toe-container">
 				<h1>Waar wil je naar toe?</h1>
 				<form id="form" action="#" method="POST">
-
-					<label for="from-choice">Van</label>
-					<input list="from" id="from-choice" name="fromChoice">
-					<datalist id="from">
-						<option value="Eindhoven Centraal">
-						<option value="Amsterdam Centraal">
-						<option value="Ziggo Dome, Amsterdam">
-						<option value="Ahoy Rotterdam, Ahoyweg, Rotterdam">
-					</datalist>
-
-					<label for="to-choice">Naar</label>
-					<input list="to" id="to-choice" name="toChoice">
-					<datalist id="to">
-						<option value="Eindhoven Centraal">
-						<option value="Amsterdam Centraal">
-						<option value="Ziggo Dome, Amsterdam">
-						<option value="Ahoy Rotterdam">
-					</datalist>
-
-					<label for="time">Hoe laat?</label>
-					<input id="time" type="time">
-					
-					<label for="date">Wanneer?</label>
-					<input id="date" type="date">
-					
-					<button type="submit">Zoeken</button>
+					<label for="from">Van</label>
+					<select class="datalist" id="from" value="Amsterdam Centraal" name="fromChoice">
+					</select>
+					<label for="to">Naar</label>
+					<select class="datalist" id="to" value="Eindhoven" name="toChoice">
+					</select>
+					<button id="not-work-home" type="submit">Zoeken</button>
 				</form>
+			</div>
+			<div class="legenda">
+				<div class="top keyboard">
+					<kbd>
+						q
+					</kbd>
+					<kbd>
+						w
+					</kbd>
+					<kbd>
+						e
+					</kbd>
+					<kbd>
+						r
+					</kbd>
+					<kbd>
+						t
+					</kbd>
+					<kbd>
+						y
+					</kbd>
+					<kbd>
+						u
+					</kbd>
+					<kbd>
+						i
+					</kbd>
+					<kbd>
+						o
+					</kbd>
+				</div>
+				<div class="middle keyboard">
+					<kbd>
+						a
+					</kbd>
+					<kbd>
+						s
+					</kbd>
+					<kbd>
+						d
+					</kbd>
+					<kbd>
+						f
+					</kbd>
+					<kbd>
+						g
+					</kbd>
+					<kbd>
+						h
+					</kbd>
+					<kbd>
+						j
+					</kbd>
+					<kbd>
+						k
+					</kbd>
+					<kbd>
+						l
+					</kbd>
+				</div>
+				<div class="bottom keyboard">
+					<kbd>
+						z
+					</kbd>
+					<kbd>
+						x
+					</kbd>
+					<kbd>
+						c
+					</kbd>
+					<kbd>
+						v
+					</kbd>
+					<kbd>
+						b
+					</kbd>
+					<kbd>
+						n
+					</kbd>
+					<kbd>
+						m
+					</kbd>
+					<kbd>
+						,
+					</kbd>
+					<kbd>
+						.
+					</kbd>
+				</div>
+				<div class="van-naar-legenda-label">
+					<p>ZOEKEN</p>
+				</div>
+				<p>
+					Keyboard input
+				</p>
 			</div>
 		</div>
 		<audio id="a" src="../assets/samples/a.mp3"></audio>
