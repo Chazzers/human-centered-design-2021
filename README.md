@@ -82,3 +82,9 @@ Ik heb wat nonsense toegevoegd door gitaargeluiden met distortion te plaatsen op
 Als Marijn een andere bestemming wilt dan een van zijn gebruikelijke bestemmingen, heeft hij bij de laatste stap om al zijn frustraties weg te slaan nog de mogelijkheid om zijn hele toetsenbord te gebruiken.
 
 ![image](https://user-images.githubusercontent.com/33430669/118549337-9be03080-b75b-11eb-9929-8447c740396e.png)
+
+## Testen
+
+Mijn test verslagen kun je vinden in mijn [wiki](https://github.com/Chazzers/human-centered-design-2021/wiki). 
+
+
